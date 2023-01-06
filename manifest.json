@@ -1,8 +1,8 @@
 {
-  "name": "Twitter views/likes ratio",
+  "name": "Twitter like/views percentage",
   "version": "0.1.0",
   "manifest_version": 3,
-  "description": "See views to likes ratio on Twitter.",
+  "description": "This chrome extension allows users to see the percentage of likes to views for tweets on Twitter.",
   "homepage_url": "https://github.com/Krystofee/gitlab-unresolved-threads",
   "icons": {
     "16": "icons/icon16.png",

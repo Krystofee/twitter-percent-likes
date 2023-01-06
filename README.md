@@ -3,7 +3,7 @@
 
 # Twitter percent likes extension
 
-The chrome extension is a tool that allows users to quickly and easily see the percentage of likes to views for tweets on Twitter. When a user navigates to their Twitter feed, the extension will automatically display the like-to-view ratio for each tweet.
+This chrome extension allows users to see the percentage of likes to views for tweets on Twitter. When a user navigates to their Twitter feed, the extension will automatically display the like-to-view ratio for each tweet.
 
 ![Screenshot](/img/screenshot-musk.png)
 
