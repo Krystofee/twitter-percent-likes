@@ -52,12 +52,11 @@ if (/^https:\/\/twitter\.com.*$/.test(window.location.href)) {
 
     smallBarElements.forEach(function (element) {
       // Skip invalid elements. (Ads?) Fixes bug where some tweets are skipped?
-      if (element.children[0].children[0].children[0].children.length <= 1) {
-        console.log(element)
+      if (element.children[3].children[0].children[0].children.length <= 1) {
         return
       };
-      var viewsCount = shortToNumber(element.children[0].children[0].children[0].children[1].innerText);
-      var likesCount = shortToNumber(element.children[3].children[0].children[0].children[1].innerText);
+      var viewsCount = shortToNumber(element.children[3].children[0].children[0].children[1].innerText);
+      var likesCount = shortToNumber(element.children[2].children[0].children[0].children[1].innerText);
       var percentLikes = Math.round((likesCount / viewsCount) * 10000) / 100;
 
       var ratioElement = document.createElement("div");
