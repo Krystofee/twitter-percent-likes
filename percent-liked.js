@@ -48,11 +48,15 @@ if (/^https:\/\/twitter\.com.*$/.test(window.location.href)) {
       element.appendChild(ratioElement);
     });
 
-    var smallBarElements = document.querySelectorAll(".css-1dbjc4n.r-1ta3fxp.r-18u37iz.r-1wtj0ep.r-1s2bzr4.r-1mdbhws");
+    var smallBarElements = document.querySelectorAll('[role="group"]');
 
     smallBarElements.forEach(function (element) {
-      var viewsCount = shortToNumber(element.children[0].children[0].children[0].children[1].innerText);
-      var likesCount = shortToNumber(element.children[3].children[0].children[0].children[1].innerText);
+      // Skip invalid elements. (Ads?) Fixes bug where some tweets are skipped?
+      if (element.children[3].children[0].children[0].children.length <= 1) {
+        return
+      };
+      var viewsCount = shortToNumber(element.children[3].children[0].children[0].children[1].innerText);
+      var likesCount = shortToNumber(element.children[2].children[0].children[0].children[1].innerText);
       var percentLikes = Math.round((likesCount / viewsCount) * 10000) / 100;
 
       var ratioElement = document.createElement("div");
@@ -79,5 +83,5 @@ if (/^https:\/\/twitter\.com.*$/.test(window.location.href)) {
     });
   }
 
-  setInterval(run, 1000);
+  setInterval(run, 333);
 }
